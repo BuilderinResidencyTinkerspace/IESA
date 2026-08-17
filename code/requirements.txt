@@ -1,0 +1,12 @@
+# IESA – Python dependencies
+# Install with: pip install -r requirements.txt
+
+# Core
+python-dotenv>=1.0.0
+
+# OLED display (Stage 2)
+luma.oled>=3.13.0
+Pillow>=10.0.0
+
+# Testing
+pytest>=8.0.0
