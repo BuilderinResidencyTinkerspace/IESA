@@ -12,6 +12,8 @@ import sys
 
 from core.system_manager import SystemManager
 from emotion.oled import OLEDDisplay
+from hardware.camera import CameraManager
+from hardware.ai_hat import AIHatManager
 
 
 def main() -> None:
@@ -20,7 +22,12 @@ def main() -> None:
 
     # ── Register subsystems ──────────────────────────────────────
     oled = OLEDDisplay()
+    camera = CameraManager()
+    ai_hat = AIHatManager()
+
     manager.register_module("oled", oled)
+    manager.register_module("camera", camera)
+    manager.register_module("ai_hat", ai_hat)
 
     try:
         manager.startup()
@@ -45,3 +52,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

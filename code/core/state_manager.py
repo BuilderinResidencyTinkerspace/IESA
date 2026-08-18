@@ -27,6 +27,7 @@ class SystemState(Enum):
     LISTENING = auto()
     THINKING = auto()
     RESPONDING = auto()
+    RECOGNIZING = auto()   # AI HAT+ running face/voice recognition inference
     MOVING = auto()
     FOLLOWING = auto()
     SAFETY_STOP = auto()

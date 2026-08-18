@@ -13,8 +13,8 @@ class TestSystemState:
     def test_all_states_present(self):
         expected = {
             "BOOTING", "INITIALIZING", "IDLE", "SLEEPING",
-            "LISTENING", "THINKING", "RESPONDING", "MOVING",
-            "FOLLOWING", "SAFETY_STOP", "ERROR",
+            "LISTENING", "THINKING", "RESPONDING", "RECOGNIZING",
+            "MOVING", "FOLLOWING", "SAFETY_STOP", "ERROR",
         }
         actual = {s.name for s in SystemState}
         assert actual == expected

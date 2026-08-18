@@ -10,3 +10,15 @@ Pillow>=10.0.0
 
 # Testing
 pytest>=8.0.0
+
+# ── Future stages (not needed yet) ──────────────────────────────
+# USB Camera (video / face recognition):
+#   opencv-python>=4.9.0
+#
+# AI HAT+ (Hailo-8L accelerator):
+#   hailort>=4.17.0          # HailoRT Python bindings
+#
+# Audio I/O:
+#   pyaudio>=0.2.14          # microphone input
+#   sounddevice>=0.4.6       # alternative audio I/O
+

@@ -2,8 +2,11 @@
 System Manager
 ~~~~~~~~~~~~~~
 Top-level orchestrator that wires together configuration, logging,
-the event bus, and the state machine.  All subsystems (OLED, audio,
-motors …) will register themselves here in later stages.
+the event bus, and the state machine.  Subsystems (OLED, USB camera,
+AI HAT+, motors …) register themselves here and participate in the
+startup/shutdown lifecycle.
+
+States include RECOGNIZING for AI HAT+ inference (face/voice recognition).
 """
 
 from __future__ import annotations

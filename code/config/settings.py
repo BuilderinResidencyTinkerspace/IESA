@@ -57,6 +57,23 @@ OLED_HEIGHT: int = _env_int("OLED_HEIGHT", 64)
 GUEST_RETENTION_HOURS: int = _env_int("GUEST_RETENTION_HOURS", 24)
 
 # ---------------------------------------------------------------------------
+# USB Camera (video / face recognition)
+# ---------------------------------------------------------------------------
+CAMERA_DEVICE: str = _env("CAMERA_DEVICE", "/dev/video0")
+CAMERA_WIDTH: int = _env_int("CAMERA_WIDTH", 640)
+CAMERA_HEIGHT: int = _env_int("CAMERA_HEIGHT", 480)
+CAMERA_FPS: int = _env_int("CAMERA_FPS", 30)
+
+# ---------------------------------------------------------------------------
+# Raspberry Pi AI HAT+ (Hailo-8L accelerator)
+# Used for on-device speech recognition and voice recognition
+# ---------------------------------------------------------------------------
+AI_HAT_ENABLED: bool = _env("AI_HAT_ENABLED", "true").lower() in ("true", "1", "yes")
+AI_HAT_DEVICE: str = _env("AI_HAT_DEVICE", "/dev/hailo0")
+SPEECH_SAMPLE_RATE: int = _env_int("SPEECH_SAMPLE_RATE", 16000)
+SPEECH_LANGUAGE: str = _env("SPEECH_LANGUAGE", "en")
+
+# ---------------------------------------------------------------------------
 # Convenience: collect everything into a dict for logging / health checks
 # ---------------------------------------------------------------------------
 
@@ -70,4 +87,11 @@ def as_dict() -> dict:
         "OLED_WIDTH": OLED_WIDTH,
         "OLED_HEIGHT": OLED_HEIGHT,
         "GUEST_RETENTION_HOURS": GUEST_RETENTION_HOURS,
+        "CAMERA_DEVICE": CAMERA_DEVICE,
+        "CAMERA_RESOLUTION": f"{CAMERA_WIDTH}x{CAMERA_HEIGHT}",
+        "CAMERA_FPS": CAMERA_FPS,
+        "AI_HAT_ENABLED": AI_HAT_ENABLED,
+        "AI_HAT_DEVICE": AI_HAT_DEVICE,
+        "SPEECH_SAMPLE_RATE": SPEECH_SAMPLE_RATE,
+        "SPEECH_LANGUAGE": SPEECH_LANGUAGE,
     }
